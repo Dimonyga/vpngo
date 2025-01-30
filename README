@@ -1,0 +1,23 @@
+Simple point-2-point vpn with weak encryption
+
+Example config
+
+main:
+  timeout: 15
+  keepalive: 5
+  secret: keepyoueuesclosed
+peers:
+  - name: vpntest-1
+    eaddress: 192.168.81.113
+    iaddress: 192.168.50.113
+    nat: false
+    port: 40404
+  - name: vpntest-2
+    eaddress: 192.168.81.112
+    iaddress: 192.168.50.112
+    nat: true
+    port: 40404
+
+Run
+
+./vpngo -whoami $(hostname)
