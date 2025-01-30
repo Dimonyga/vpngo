@@ -24,6 +24,7 @@ type Peer struct {
 	Name     string `yaml:"name"`
 	EAddress string `yaml:"eaddress"`
 	IAddress string `yaml:"iaddress"`
+	IMask    string `yaml:"imask"`
 	Nat      bool   `yaml:"nat"`
 	Port     int    `yaml:"port"`
 }

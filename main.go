@@ -107,7 +107,7 @@ func main() {
 	whoami := flag.String("whoami", "", "whoami")
 	flag.Parse()
 	cfg := getConfig(*whoami)
-	iface := ifaceSetup(fmt.Sprint(cfg.Me.IAddress, "/24"))
+	iface := ifaceSetup(fmt.Sprint(cfg.Me.IAddress, "/", cfg.Me.IMask))
 	udpConn, err := net.ListenUDP("udp4", &net.UDPAddr{Port: cfg.Me.Port})
 	if err != nil {
 		log.Fatalln("Unable to get UDP socket:", err)
