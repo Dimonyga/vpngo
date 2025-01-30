@@ -5,7 +5,7 @@ Example config
 main:
   timeout: 15
   keepalive: 5
-  secret: keepyoueuesclosed
+  secret: keepyoueyesclosed
 peers:
   - name: vpntest-1
     eaddress: 192.168.81.113
@@ -21,3 +21,10 @@ peers:
 Run
 
 ./vpngo -whoami $(hostname)
+
+Benchmark
+iperf3
+
+[ ID] Interval           Transfer     Bitrate         Retr
+[  5]   0.00-6.09   sec   563 MBytes   775 Mbits/sec  769             sender
+[  5]   0.00-6.09   sec  0.00 Bytes  0.00 bits/sec                  receiver
