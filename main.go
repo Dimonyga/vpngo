@@ -53,6 +53,10 @@ func rcvrThread(ctx context.Context, wg *sync.WaitGroup, conn net.PacketConn, if
 				cfg.SetNeighborPort(client.(*net.UDPAddr).Port)
 				log.Println("Neighbor port set to: ", cfg.Neighbor.Port)
 			}
+			if cfg.Neighbor.EAddress == "0.0.0.0" {
+				cfg.SetNeighborEaddress(client.(*net.UDPAddr).IP.String())
+				log.Println("Neighbor address set to: ", cfg.Neighbor.EAddress)
+			}
 			c.Reset()
 			c.XORKeyStream(dst, payload[:n])
 			_, err = iface.ReadWriteCloser.Write(dst[:n])

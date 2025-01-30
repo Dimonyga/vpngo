@@ -59,3 +59,7 @@ func getConfig(name string) Config {
 func (c *Config) SetNeighborPort(port int) {
 	c.Neighbor.Port = port
 }
+
+func (c *Config) SetNeighborEaddress(eaddress string) {
+	c.Neighbor.EAddress = eaddress
+}
